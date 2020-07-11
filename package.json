@@ -1,0 +1,46 @@
+{
+  "name": "bare-node-starter",
+  "version": "1.0.0",
+  "description": "starter project for a non-server node app on typescript",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "clean": "rm -rf build",
+    "lint": "eslint src --ext .ts",
+    "prepublishOnly": "npm run clean && npm run build && npm run lint && npm run test",
+    "test": "jest --coverage",
+    "debug-jest": "node --inspect-brk node_modules/.bin/jest --runInBand",
+    "start": "node build/index.js",
+    "nodemon": "npx nodemon"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "testRegex": "(/.*\\.(test|spec))\\.(ts|tsx)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "json"
+    ]
+  },
+  "author": "",
+  "license": "ISC",
+  "engines": {
+    "node": ">=14"
+  },
+  "devDependencies": {
+    "@types/jest": "^26.0.4",
+    "@types/node": "^14.0.22",
+    "@typescript-eslint/eslint-plugin": "^3.6.0",
+    "@typescript-eslint/parser": "^3.6.0",
+    "eslint": "^7.4.0",
+    "eslint-plugin-node": "^11.1.0",
+    "jest": "^26.1.0",
+    "nodemon": "^2.0.4",
+    "ts-jest": "^26.1.1",
+    "ts-node": "^8.10.2",
+    "typescript": "^3.9.6"
+  }
+}
